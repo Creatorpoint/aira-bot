@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: aira-ultra
+    runtime: python
+    startCommand: python bot.py
