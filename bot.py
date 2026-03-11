@@ -301,6 +301,13 @@ app.add_handler(CommandHandler("balance",balance))
 app.add_handler(MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS,welcome))
 app.add_handler(MessageHandler(filters.TEXT,message))
 
+import asyncio
+
 print("Aira Ultra Bot Running...")
 
-app.run_polling()
+async def main():
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling()
+
+asyncio.run(main())
