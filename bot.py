@@ -305,9 +305,10 @@ import asyncio
 
 print("Aira Ultra Bot Running...")
 
-async def main():
+async def run():
     await app.initialize()
     await app.start()
-    await app.updater.start_polling()
+    await app.bot.initialize()
+    await app.run_polling()
 
-asyncio.run(main())
+asyncio.run(run())
